@@ -1,0 +1,360 @@
+// Variabelen
+$primary-color: #751313;
+$secondary-color: #c7b592;
+$background-color: #ebd7af;
+$font-family: Arial, sans-serif;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Mixin voor box shadow
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+// Namespace voor margin
+%margin {
+    margin: 0;
+}
+
+// Operations
+$padding-large: 40px;
+$padding-small: $padding-large / 2;
+
+body {
+    @extend %margin;
+    font-family: $font-family;
+    background-color: $background-color;
+}
+
+header {
+    background-color: $secondary-color;
+    padding: $padding-large 0;
+    @include box-shadow($box-shadow);
+    font-size: 1.0em;
+}
+
+nav {
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        @extend %margin;
+        padding: 0;
+
+        li {
+            margin: 0 15px;
+
+            a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 160px 50px;
+    text-align: center;
+    margin-left: 250px;
+
+    .intro-text {
+        max-width: 1500px;
+        margin-bottom: 50px;
+        font-size: 8.5em;
+
+        h1 {
+            font-size: 5.5em;
+            margin: 0;
+
+            .highlight {
+                color: $primary-color;
+            }
+        }
+
+        h2 {
+            font-size: 1em;
+            color: #333;
+            margin: 10px 0 20px;
+            font-weight: 100;
+            text-align: left;
+        }
+
+        button {
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            padding: 20px 120px;
+            font-size: 2em;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+
+    .intro-image {
+        margin-left: 200px;
+
+        img {
+            width: 400px;
+            height: auto;
+            border-radius: 50%;
+            background-color: $primary-color;
+            padding: 10px;
+        }
+    }
+}
+
+.social-links {
+    a {
+        img {
+            width: 24px;
+            height: 24px;
+            margin: 0 10px;
+            margin-left: 100px;
+        }
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+
+#skills {
+    padding: 60px 0;
+    text-align: center;
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .skill {
+        margin-bottom: 20px;
+
+        h3 {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background: $secondary-color;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .progress {
+                background: $primary-color;
+                height: 20px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+section#about {
+    background-color: darken($secondary-color, 10%);
+    padding: 20px;
+    border-radius: 8px;
+
+    .intro {
+        margin-bottom: 20px;
+
+        .intro-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+
+    .photo {
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            @include box-shadow($box-shadow);
+        }
+    }
+}
+
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: $primary-color;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: $primary-color;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+        background: $secondary-color;
+        padding: 20px;
+        @include box-shadow($box
+        -shadow);
+        border-radius: 8px;
+
+        label {
+            text-align: left;
+            width: 100%;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: $primary-color;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+
+            &:hover {
+                background: lighten($primary-color, 10%);
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $secondary-color;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    background: cabfa9;
+    @include box-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+
+    .contact-info {
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        a {
+            img {
+                width: 24px;
+                height: 24px;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+.project-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3vw;
+    margin: 10vw 3vw 7vw;
+
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+
+        .project-foto {
+            height: 35vw;
+        }
+
+        .project-link {
+            font-size: 5vw;
+        }
+    }
+}
+
+.projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color;
+    @include box-shadow(0.2vw 0.2vw 0.5vw 0.2vw black);
+
+    .project-foto {
+        margin-top: 0.3vw;
+        width: 98%;
+        height: 17.5vw;
+        object-fit: cover;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: black;
+        font-size: 2vw;
+        padding: 0.5vw;
+        transition: all 0.7s;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}
+
+// Gebruik van @for, @each en @while
+@for $i from 1 through 5 {
+    .item-#{$i} {
+        width: 20% * $i;
+    }
+}
+
+$colors: (primary: #751313, secondary: #c7b592, background: #ebd7af);
+
+@each $name, $color in $colors {
+    .#{$name}-bg {
+        background-color: $color;
+    }
+}
+
+$i: 1;
+@while $i < 4 {
+    .box-#{$i} {
+        width: 100px * $i;
+    }
+    $i: $i + 1;
+}
